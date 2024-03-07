@@ -1,0 +1,106 @@
+<!--Kommentar-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML-Review & Emmet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Emmet1</h1>
+    <section>
+        <article>
+            <h2>Was ist Emmet1?</h2>
+            <p>Kurzform um HTML zu schreiben. Schneller und einfacher als alles selbst zu tippen. Früher bekannt als Zen-Coding</p>
+            <h3>Wie funktioniert es?</h3>
+            <p class="test">Stellt auch weitere Funktionalität bereit wie das einsetzen von ID`s und Klassen.</p>
+            <p id="test">ID</p>
+            
+            <h3>Emmet-Syntax</h3>
+            <ul>
+                <li>element => <p></p> </li>
+                <li>element.className => <p class="class"></p> </li>
+                <li>element#idName => <p id="ID"></p> </li>
+                <li>element1>element2 => <div> <p></p> </div> </li>
+                <li>element1+element2 => <div></div> <p></p></li>
+                <li>element2^element3 => Element 3 wird auf der selben Ebene wie Element1 erstellt</li>
+                <li>element1*n => <p></p> <p></p></li>
+                <li>element1[attribut=wert] => Erstellt das Element mit dem entsprechenden Attribut</li>
+                <li>element1#$test => Stellt uns Nummerierung zur Verfügung, meistens in Kombi mit Multiplikator benutzt</li>
+                <li>element1{text} => Erstellt element1 mit dem entsprechenden Text</li>
+            </ul>
+        </article>
+        <article>
+            <h2>Lorem, ipsum.</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum, eaque? Esse, quasi necessitatibus!
+                 Quibusdam, natus rerum repudiandae modi harum beatae nesciunt hic, eos aut molestiae sapiente, excepturi 
+                 fugit a voluptatibus!</p>
+        </article>
+        <article>
+            <h2>Article & Section</h2>
+            <p>Können beliebig getauscht werden. Stehen beide für eigenständige Teile der Seite, die Informationen übermitteln.
+                Sollten im Idealfall ein eigenes Heading haben. Können ineinander verschachtelt werden.
+                Sind etwas besser für SEO als eine div, da sie ihre Funktion im Namen mitübermitteln. Die div hingegen gilt als lerrer Tag.
+                Gelten als insklusiver, da sie Screenreadern ihre Arbeit erleichtern.
+            </p>
+            <h2>Header & Footer</h2>
+            <p>Können entweder als Kopf- und Fußzeile unsere gesamte Seite dienen, oder in Article und Section verwendet werden
+                um zusätzliche Infos zu liefern.
+            </p>
+            <h2>Nav</h2>
+            <p>übermittelnIst für die Navigationsleiste gedacht. Sollte nur die Navigationsleiste enthalten.</p>
+            <h2>Aside Tag</h2>
+            <p>Ist für interessante Infos innerhalb eines Textes gedacht, oder Bilder und weiterführende Infos</p>
+        </article>
+        <article>
+            <h2>Der picture-Tag</h2>
+            <p>Der picture-Tag bietet uns eine alternative zum img-Tag. Der Tag ist responsive. Der Tag enthält mindestens einen source-Tag 
+                und genau einmal den img-Tag. Beim source Tag gibt es noch das media-Attribut mit dem wir abfragen können wie groß der 
+                Bildschirm ist. Der img-Tag wird als Fallback benutzt falls keiner der source-Tags passt oder der Browser den picture-Tag 
+                nicht unterstützt.
+            </p>
+            <picture>
+                <source media="(min-width: 1080px)" srcset="https://via.placeholder.com/550x250">
+                <source media="(min-width: 750px)" srcset="https://via.placeholder.com/325x125">
+                <source media="(min-width: 500px)" srcset="https://via.placeholder.com/225x75">
+                <img src="https://via.placeholder.com/150x150" alt="Platzhalter">
+            </picture>
+        </article>
+        <article>
+            <h2>Der map-Tag</h2>
+            <p>Der map-Tag bietet uns die Möglichkeit ein Bild in mehrere Bereiche einzuteilen und diese Bereiche zu verschiedenen Links
+                zu leiten. Dabei müssen wir aufpassen, dass wir die richtigen attribute verwenden, da das Bild selber auch noch das Attribut
+                usemap="#NamederMap" enthalten muss. Der map-Tag enthält mehrere area Tags. Diese haben folgende Attribute:
+            </p>
+            <ul>
+                <li> shape-Attribut, kann folgende werte haben:
+                    <ul>
+                        <li>rect, Viereckiger Bereich</li>
+                        <li>circle, Runder Bereich</li>
+                        <li>polygon, Vieleck</li>
+                        <li>default, => selbe wie rect</li>
+                    </ul>
+                </li>
+                <li> coords, verhalten sich je nach shape unterschiedlich:
+                    <ul>
+                        <li>Rect: coords="x1, y1(obere linke Ecke, x2,y2(rechte untere Ecke))"</li>
+                        <li>Circle: coords="x1, y1(Mittelpunkt des Kreises), r(Radius)"</li>
+                        <li>Polygon: coords="x1, y1(erstes Eck), x2, y2(zweites Eck), ..."</li>
+                    </ul>
+                </li>
+                <li>href, Link wo bei Klick hingeführt wird</li>
+                <li>alt, Text der anzeigt wird wenn ich über dem Bereich hovere</li>
+            </ul>
+            <img src="https://via.placeholder.com/250x250" usemap="#exMap">
+        </article>
+        <map name="exMap">
+            <area shape="rect" coords="0,0,125,125" href="https://ppedv.de" alt="PPEDV">
+            <area shape="rect" coords="125,125,255,255" href="https://wikipedia.de" alt="wikipedia">
+        </map>
+    </section>
+
+</body>
+</html>
