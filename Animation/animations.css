@@ -1,0 +1,22 @@
+@keyframes colorShow {
+    0% {background-color: aqua; left: 0;}
+    15% {background-color: green;}
+    30% {background-color: greenyellow;}
+    45% {background-color: yellow;}
+    60% {background-color: purple; left: 250px;}
+    75% {background-color: yellow;}
+    80% {background-color: greenyellow;}
+    90% {background-color: green;}
+    100% {background-color: aqua; left: 0;}
+    
+}
+
+div#rainbow {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    animation-name: colorShow;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
