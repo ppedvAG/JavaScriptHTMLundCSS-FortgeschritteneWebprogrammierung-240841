@@ -1,4 +1,4 @@
-const passwordInp = document.querySelector("#password");
+/*const passwordInp = document.querySelector("#password");
 
 const multiply = (x, y) => x * y;
 
@@ -30,7 +30,7 @@ passwordInp.addEventListener("focus", function (ev) {
 
 // Wenn der Benutzer ein Passwort will, und die Taste loslässt (keyup) dann soll überprüft ob das Passwort 8 Zeichen lang ist
 // wenn nicht dann sollte eine Fehlermeldung kommen bzgl 8 Zeichenlängen und wie viel Zeichen man momentan hat
-
+/*
 passwordInp.addEventListener("keyup", function (ev) {
     if (passwordInp.validity.tooShort) {
         passwordInp.setCustomValidity(`Das Passwort muss mindestens 8 Zeichen lang sein. Gerade hat es ${passwordInp.value.length} Zeichen.`);
@@ -39,7 +39,7 @@ passwordInp.addEventListener("keyup", function (ev) {
         passwordInp.setCustomValidity("");
     }
 })
-
+*/
 const zipCode = document.querySelector("#zipCode");
 const country = document.querySelector("#country");
 
@@ -71,3 +71,29 @@ document.querySelector("form").addEventListener("submit", function(ev) {
     // Auf die Form angewendet verhindert event.preventDefault() Das neuladen der seite bei senden der Form
     ev.preventDefault();
 })
+
+
+const password = document.querySelector("#passwordEx");
+const confirmation = document.querySelector("#confirmation");
+const submitBtn = document.querySelector("#pwSubmit");
+
+
+function checkPassword() {
+    if(password.value === confirmation.value) {
+        confirmation.setCustomValidity("");
+        submitBtn.removeAttribute("disabled");
+    }
+    else {
+        confirmation.setCustomValidity("Die Passwörter stimmen nicht überein.");
+        confirmation.reportValidity();
+        submitBtn.setAttribute("disabled", "");
+    }
+}
+
+confirmation.addEventListener("keyup", checkPassword);
+password.addEventListener("change", checkPassword);
+
+
+console.log(submitBtn.classList);
+
+
